@@ -1,0 +1,80 @@
+// Place all the styles related to the admin/noticias controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- noticias --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.noticias{
+  width:100%;
+  height: 100%;
+  position:relative;
+  background-color:#464646;
+  
+  .noticias h3{
+      color: #fff;
+      font-family: "raleway-regular";
+      font-size: 14px;
+      font-weight: normal!important;
+      margin: 20px 0 0 0;
+  } 
+  .slogan {
+      padding:10% 0 1px 0 !important;
+  }
+  .page-scroll{
+    a{
+      color:#fff !important;
+     }
+  }
+}
+.imgNoticia img{
+    padding:10px 0 0 0;
+    border-radius:5px;
+  }
+#vista .parrafo,
+#vista .imgNoticia{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  clear: left;
+  text-align: left;
+}
+#vista .inner {
+	text-align:center;
+	.parrafo{
+		width: 60%;
+	}
+	.imgNoticia{
+		width:30%;
+	}
+}
+#vista{
+  width:85%;
+ @media(max-width:768px) {
+   width:100% ;
+  }
+}
+.anteriores{
+  strong{
+    text-transform: capitalize;
+  }
+}
+ @media only screen and (max-width: 767px) {
+    #noticias {
+    	.rightPost {
+		  width: 100%;
+		}
+		.imgNoticia {
+		  display: inline;
+		}
+		.parrafo {
+		  display: inline;
+		}
+		.imgNoticia img{
+			 max-width: 200px;
+			 display: inline;
+		}
+		.anteriores{
+			display: none;
+		}
+	}
+}

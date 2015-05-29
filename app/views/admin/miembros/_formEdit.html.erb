@@ -1,0 +1,173 @@
+<div class="row formulario rowPadding bg-gray">
+  <%= form_for @miembro, :url => admin_miembro_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del titulo-->
+    <% if @miembro.errors.any? %>
+      <div id="error_explanation">
+        <a><%=pluralize(@miembro.errors.count, "Error")%> , Esta  noticia no puede ser guardada:</a> 
+        <ul>
+          <% @miembro.errors.full_messages.each do |msg| %>
+            <li><a><%= msg %></a></li>
+          <% end %> 
+        </ul>
+      </div>
+    <% end %>
+    <br>
+  <h6>Editar Taller </h6><br>
+  <div id="contenidoInicio" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Nombre',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :nombreTaller,  :class => "form-control input-l", :placeholder => "Nombre del Taller" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Nombre Contacto',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :nombreContacto,  :class => "form-control input-l", :placeholder => "Nombre de contacto" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Dirección',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :direccion,  :class => "form-control input-l", :placeholder => "Dirección" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Fax',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :fax,  :class => "form-control input-l", :placeholder => "Fax" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Teléfono',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :telefono,  :class => "form-control input-l", :placeholder => "Teléfono" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Ciudad',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :ciudad,  :class => "form-control input-l", :placeholder => "Ciudad" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Horario',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :horario,  :class => "form-control input-l", :placeholder => "Horario" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Marca vehículo',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :marcaVehiculo,  :class => "form-control input-l", :placeholder => "Marca vehículo" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Web',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :pagina,  :class => "form-control input-l", :placeholder => "Página web" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Servicio de Grua',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :grua,  :class => "form-control input-l", :placeholder => "SI/NO" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Cita Previa',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :cita,  :class => "form-control input-l", :placeholder => "SI/NO" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Selecciona 1 fotografia del taller',  :class => "input-l",  :tabindex => "6" %>
+           <%= form.file_field :fotoTaller %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+           <div class="col-xs-12">
+            <div class="form-group">
+              <h6>Fotos para galería</h6>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Imágen 1',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :foto1%>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Imágen 2',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :foto2%>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Imágen 3',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :foto3%>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Imágen 4',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :foto4%>
+            </div>
+          </div>
+      </div>
+       <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+            <%= form.label 'Logo del taller',  :class => "input-l",  :tabindex => "6" %>
+           <%= form.file_field :logo %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 ">
+          <div class="form-group">
+            <strong>Obtener url del mapa para talleres</strong>
+            <br>
+            <ul style="list-style:none">
+              <li >
+                1. Abre <a href="//maps.google.com" target="_blank">Google Maps </a> e inicia  sesión.
+              </li>
+              <li>2. Selecciona la barra de busqueda, pulsa sobre el enlace 'Mis mapas' y luego 'Crear'.</li>
+              <li>3. Busca en mapa la direccion del taller. Puedes agregar elementos como marcadores, con las opciones disponibles en el menu bajo la barra de busqueda </li>
+              <li>4. Selecciona 'Compartir', pon un nombre al mapa.</li>
+              <li>5. En la siguiente pantalla, encontrarás la configuración de uso compartido, asegurate de que el acceso sea, público en la web, pulsa finalizar.</li>
+              <li>6. Selecciona en el menu del mapa la opción 'Insertar en mi sitio'. Copia la ruta disponible dentro del cuadro de texto, esta será similar a <strong>https://www.google.com...UrlDeTuMapa"</strong></li>
+              <li>7. Pega la ruta url en el campo 'Url Mapa'.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <%= form.label 'Url Mapa',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :mapa,  :class => "form-control input-l", :placeholder => "Mapa" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <%= form.label 'Comentario',  :class => "input-l" %>
+           <%= form.text_area :comentario,  :class => "form-control input-l ", :placeholder => "Comentario sobre los servicios  del taller" %>
+          </div>
+        </div>
+      </div>
+      <p>
+        <%= form.submit  :value =>'guardar',  :class => 'btn btn-info' %>
+      </p>
+  </div>
+  <% end %>
+</div>
+

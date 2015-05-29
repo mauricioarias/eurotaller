@@ -1,0 +1,364 @@
+<section  class=" contentAdmin bg-gray home-section text-center textoAdministrador ">
+	<div clas="row"><br><br>
+		<div class="col-xs-12 ">
+          <div class="form-group">
+            <a><%=  link_to 'Editar Contenido', edit_admin_contenido_path(@contenido), :class => 'btn btn-info'%></a>
+          </div>
+        </div>
+	</div><br><br>
+   <div class="row">
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Inicio</h4>
+        <%= link_to "#contenidoInicio" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoInicio" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <h6>Descripcón Eurotaller </h6>
+            <p><%= @contenido.descripcion %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <h6>Frase promocional bajo el video </h6>
+            <p><%= @contenido.fraseInicio %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Imagen de Fondo </h6>
+              <%= image_tag @contenido.fondoInicio.url, :class =>"img-responsive" %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Logo </h6>
+              <%= image_tag @contenido.logo.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+      </div>
+    </div>  
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->  
+    <hr class="marginbot-50">       
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Beneficios</h4>
+        <%= link_to "#contenidoBeneficios" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoBeneficios" class ="formulario">
+       <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6>Nosotros, decripción general' </h6>
+           <p><%= raw @contenido.nosotros %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6>Slogan </h6>
+           <p><%= @contenido.slogan1 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6> Frase promocional </h6>
+           <p><%= @contenido.frase1 %></p>
+          </div>
+        </div>
+        <div class="col-xs- col-sm-6 col-md-6">
+          <div class="form-group ">
+            <h6> Convenios de la red </h6>
+           <p><%= raw @contenido.convenios %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group"> 
+            <h6>Beneficios, descripción corta</h6>
+            <p><%= raw @contenido.beneficios %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group"> 
+            <h6>Beneficios, descripción detallada </h6>
+            <p><%= raw @contenido.masBeneficios %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 ">
+          <div class="form-group"> 
+            <strong>Historia, descripción corta</strong>
+           <%= raw @contenido.respaldo %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 ">
+          <div class="form-group"> 
+            <strong>Historia, descripción detallada </strong>
+           <%= raw @contenido.masRespaldo %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Icono  convenios </h6>
+             <%= image_tag @contenido.imgConvenios.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Icono beneficios </h6>
+             <%= image_tag @contenido.imgBeneficios.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Icono  Historia</h6>
+             <%= image_tag @contenido.imgRespalfo.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Imagen de fondo para esta sesion </h6>
+             <%= image_tag @contenido.fondoBeneficios.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| --> 
+   <hr class="marginbot-50">   
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Únete</h4>
+        <%= link_to "#contenidoUnete" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+   </div>
+    <div id="contenidoUnete" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6> Slogan </h6>
+           <p><%= @contenido.slogan2 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6> Frase promocional 1 </h6>
+           <p><%= @contenido.frase2 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 ">
+          <div class="form-group">
+            <h6>Formación </h6>
+            <p><%= @contenido.formacion %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6> Titulo de la sesión</h6>
+           <p><%= raw @contenido.frase3 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group"> 
+            <h6> marketing </h6>
+            <p><%= @contenido.marketing %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group"> 
+            <h6> información </h6>
+            <p><%= @contenido.informacion %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group"> 
+            <h6> Imagen Eurotaller </h6>
+            <p><%= @contenido.imagenEurotaller %></p>
+          </div>
+        </div>
+      </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Icono para formación </h6>
+              <%= image_tag @contenido.imgFormacion.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Icono para marketing </h6>
+              <%= image_tag @contenido.imgMarketing.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Icono para infomación </h6>
+              <%= image_tag @contenido.imgInfomacion.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Icono para imagen </h6>
+             <%= image_tag @contenido.imgImagen.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6> Imagen de fondo para esta sesion </h6>
+             <%= image_tag @contenido.fondoUnete.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| --> 
+   <hr class="marginbot-50">  
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Talleres</h4>
+        <%= link_to "#contenidoTalleres" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoTalleres" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <h6> Slogan </h6>
+           <p><%= @contenido.slogan3%></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <h6>Frase promocional 1 </h6>
+           <p><%= @contenido.frase4 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <h6> Frase promocional 2 </h6>
+           <p><%= @contenido.frase5 %></p>
+          </div>
+        </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="form-group">
+              <h6>Imagen de fondo para esta sesión </h6>
+              <%= image_tag @contenido.fondoTalleres.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+   <hr class="marginbot-50"> 
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Noticias</h4>
+        <%= link_to "#contenidoNoticias" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoNoticias" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <h6> Slogan </h5>
+           <p><%= @contenido.slogan4 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <h6> Frase promocional 1 </h6>
+           <p><%= @contenido.frase6 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+            <h6>Imagen de fondo para esta sesión </h6>
+            <%= image_tag @contenido.fondoNoticias.url, :class =>"img-responsive" %>
+          </div>
+        </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+   <hr class="marginbot-50"> 
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Contacto</h4>
+        <%= link_to "#contenidoContacto" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoContacto" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6> Slogan </h5>
+           <p><%= @contenido.slogan5 %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <h6>Frase promocional 2</h6>
+           <p><%= @contenido.frase7 %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+           <h6> Correo </h6>
+           <p><%= @contenido.correo %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+           <h6>Telefono </h6>
+           <p><%= @contenido.telefono %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+           <h6>Cuenta de Twitter</h6>
+           <p><%= @contenido.twitter %></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+           <h6> Cuenta de YouTube </h6>
+           <p><%= @contenido.google %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group">
+           <h6>Cuenta de Facebook</h6>
+           <p><%= @contenido.facebook %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <h6>Imagen de fondo de esta sesión </h6>
+              <%= image_tag @contenido.fondoContacto.url, :class =>"img-responsive " %>
+            </div>
+          </div>
+      </div>
+    </div>

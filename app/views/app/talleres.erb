@@ -1,0 +1,25 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+	<!-- intro -->
+    <section id="intro" class="talleres" style="background: url(<%= contenido.fondoTalleres.url %>); background-position: top center; background-repeat: no-repeat; background-size: cover;">
+		<div class="slogan  wow fadeInUp animated">
+			<div class="slogan  wow fadeInUp animated">
+				<h2><%= contenido.slogan3 %></h2>
+				<h4>Listado de talleres</h4>
+				<div class="page-scroll">
+					<%= link_to "#mapa", :class => "btn btn-circle centro" do %>
+						<i class="glyphicon glyphicon-menu-down bordeRadius animated "></i>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<br><br>
+    </section>
+<% end %>
+<%=  render :partial => "miembros/mapa" %>
+<%=  render :partial => "layouts/footer" %>
+<script>
+ $(document).ready(function (){
+    $("#s3 a").css('color','#138bbe');
+  });
+</script>

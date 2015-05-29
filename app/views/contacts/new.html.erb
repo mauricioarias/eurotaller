@@ -1,0 +1,66 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+<section id="intro" class="contacto" style="background: url(<%= contenido.fondoContacto.url %>); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+  <div class="slogan  wow fadeInUp animated">
+    <h2><%= contenido.slogan5 %></h2>
+    <h4><%= contenido.frase6 %></h4>
+  </div>
+</section>
+<!-- formulario -->
+<section id="registro" class="home-section text-center bg-gray " >
+  <div class="heading-about">
+    <div class="container">
+      <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <div align="center">
+          <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+            <h2>Escríbenos<small><br><h5><%= contenido.frase7 %><h5></small></h2>
+            <hr class="colorgraph">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                 <%= f.text_field :nombre, :required => true, :class => "form-control input-l", :placeholder => "Nombre", :required => true %>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                 <%= f.text_field :correo, :required => true, :class => "form-control input-l", :placeholder => "Correo", :required => true %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                 <%= f.text_field :ciudad, :required => true, :class => "form-control input-l", :placeholder => "Ciudad", :required => true %>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                 <%= f.text_field :taller, :required => true, :class => "form-control input-l", :placeholder => "Taller" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 ">
+                <div class="form-group">
+                  <%= f.text_area :mensaje, :required => true, :class => "form-control input-l altoFijo", :placeholder => "Mensaje", :required => true %>
+                </div>
+              </div>
+            </div>
+            </br>
+            <%= f.submit :value =>'Enviar mensaje', :class=> "btn btn-info" %>  
+          <% end %>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+<script>
+ $(document).ready(function (){
+    $("#s5 a").css('color','#138bbe');
+  });
+</script>
+
+    

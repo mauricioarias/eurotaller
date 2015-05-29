@@ -1,0 +1,26 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row">
+			 <div  class ="formulario"><br><br>
+		      <div class="row">
+		        <div class="col-xs-12 col-sm-6 col-md-6">
+		          <div class="form-group">
+		            <h6>Nombre: <%= @convenio.nombre %></h6>
+		             <p>Fecha de validez: <%= @convenio.fecha %></p>
+		             <p><strong>Descripción corta:&nbsp;</strong><%= @convenio.descripcion %></p>
+		             <p><strong>Detalles del convenio:&nbsp;</strong><%= raw @convenio.detalles  %></p>
+		          </div>
+		        </div>
+				<div class="col-xs-12 col-sm-3 col-md-3">
+					<div class="form-group">
+					  <h6>Logo </h6>
+					  <%= image_tag @convenio.logo.url, :class =>"img-responsive ", :style=>"max-width:70px !important;"%>
+					</div>
+				</div>
+		      </div>			 	
+		      <a>
+		 		<%= link_to 'Editar', edit_admin_convenio_path(@convenio) %> | 
+		 		<%= link_to 'Eliminar', admin_convenio_path(@convenio), method: :delete, :onclick => "return confirm('Estas seguro de eliminar este convenio?')" %>
+			 	</a>
+		 	</div> 
+	</div>
+</section>

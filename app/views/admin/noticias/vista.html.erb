@@ -1,0 +1,31 @@
+<!-- %=  render :partial => "layouts/submenu" %-->
+<section class="home-section  bg-gray ">
+	<div class="row rowPadding">
+		<!-- anteriores -->
+		 <div class="leftPost">
+          <h6><%= @anteriores %><h6>
+            <% @noticia.each do |noticia| %>
+              <div class="post_antiguo">
+                <a><%=link_to noticia.titulo  , admin_noticia_path(noticia) %></a>
+              </div>
+           <% end %>
+        </div>
+		<!-- entrada blog -->
+		<div class="rightPost">
+			<% @noticia.each do |noticia| %>
+				<div class="wow bounceInUp" data-wow-delay="0.2s">
+		            <div class="team boxed-grey">
+						<div class="inner">
+							<p class="subtitulo"><%=  noticia.titulo %> <p>
+							<a><%= noticia.created_at %></a><br>
+							<p><%= raw noticia.descripcion %> <p>
+							<p><%= raw noticia.contenido %> <p>
+								<%= image_tag noticia.image.url %>
+						</div>
+					</div> 
+				</div>
+	   		<% end %>
+		</div>
+	</div>
+</section>
+<!--%=  render :partial => "layouts/footer" %-->

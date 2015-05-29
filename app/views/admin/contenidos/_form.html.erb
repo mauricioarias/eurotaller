@@ -1,0 +1,381 @@
+<section  class="  bg-gray home-section text-center  ">
+  <%= form_for @contenido, :url => admin_contenidos_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del titulo-->
+    <% if @contenido.errors.any? %>
+      <div id="error_explanation">
+        <a><%=pluralize(@contenido.errors.count, "Error")%> , Este contenido no puede ser guardado:</a> 
+        <ul>
+          <% @contenido.errors.full_messages.each do |msg| %>
+            <li><a><%= msg %></a></li>
+          <% end %> 
+        </ul>
+      </div>
+    <% end %>
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Inicio</h4>
+        <%= link_to "#contenidoInicio" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoInicio" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <%= form.label 'Descripcón Eurotaller',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :descripcion,  :class => "form-control input-l", :placeholder => "Descripción Eurotaller" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <%= form.label 'Frase promocional bajo el video',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :fraseInicio,  :class => "form-control input-l", :placeholder => "Frase promocional bajo el video" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona la Imagen de Fondo',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoInicio %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el logo',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :logo %>
+            </div>
+          </div>
+      </div>
+    </div>  
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->         
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Beneficios</h4>
+        <%= link_to "#contenidoBeneficios" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoBeneficios" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Slogan',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :slogan1, :required => true, :class => "form-control input-l", :placeholder => "slogan", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase1, :required => true, :class => "form-control input-l", :placeholder => "frase 1" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <%= form.label 'Convenios de la red',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :convenios,  :class => "form-control input-l", :placeholder => "Convenios de la red" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'beneficios',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :beneficios,  :class => "form-control input-l", :placeholder => "detalles" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Más información sobre beneficios',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :masBeneficios,  :class => "form-control input-l", :placeholder => "detalles" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Historia',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :respaldo,  :class => "form-control input-l", :placeholder => "historia" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Más información sobre historia',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :masRespaldo,  :class => "form-control input-l", :placeholder => "Detalles" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+              <%= form.label 'Ancho mínimo: 150px',  :class => "input-l",  :tabindex => "6" %>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para convenios',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgConvenios %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para beneficios',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgBeneficios %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para historia',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgRespalfo %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona la imagen de fondo para esta sesion',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoBeneficios %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| --> 
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Únete</h4>
+        <%= link_to "#contenidoUnete" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+   </div>
+    <div id="contenidoUnete" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Slogan',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :slogan2, :required => true, :class => "form-control input-l", :placeholder => "slogan 2", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase2, :required => true, :class => "form-control input-l", :placeholder => "frase 2" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <%= form.label 'Formacion',  :class => "input-l",  :tabindex => "Formacion que ofrece la red a los talleres" %>
+           <%= form.text_area :formacion,  :class => "form-control input-l", :placeholder => "Formacion que ofrece la red a los talleres" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Marketing',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :marketing,  :class => "form-control input-l", :placeholder => "beneficios de la red" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Informacion',  :class => "input-l",  :tabindex => "Informacion que ofrece la red a los talleres" %>
+           <%= form.text_area :informacion,  :class => "form-control input-l", :placeholder => "respaldo de Groupauto" %>
+          </div>
+        </div>
+         <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Imagen Eurotaller',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :imagenEurotaller,  :class => "form-control input-l", :placeholder => "beneficios de la red" %>
+          </div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="form-group"> 
+            <%= form.label 'Título sesión',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_area :frase3,  :class => "form-control input-l", :placeholder => "respaldo de Groupauto" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+              <%= form.label 'Tamaño: 132px x 132px',  :class => "input-l",  :tabindex => "6" %>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para formación',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgFormacion %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para marketing',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgMarketing %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para infomación',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgInfomacion %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para imagen',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :imgImagen %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona la imagen de fondo para esta sesion',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoUnete %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| --> 
+    <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Talleres</h4>
+        <%= link_to "#contenidoTalleres" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoTalleres" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Slogan',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :slogan3, :required => true, :class => "form-control input-l", :placeholder => "slogan 3", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase4, :required => true, :class => "form-control input-l", :placeholder => "frase 4" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase5, :required => true, :class => "form-control input-l", :placeholder => "frase 5" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para formación',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoTalleres %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Noticias</h4>
+        <%= link_to "#contenidoNoticias" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoNoticias" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Slogan',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :slogan4, :required => true, :class => "form-control input-l", :placeholder => "slogan 1", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase6, :required => true, :class => "form-control input-l", :placeholder => "frase 6" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para formación',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoNoticias %>
+            </div>
+          </div>
+      </div>
+    </div>
+   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+   <div class="wow fadeInDown animated" data-wow-delay="0.4s">
+      <div class="section-heading">
+        <h4>Sesión Contacto</h4>
+        <%= link_to "#contenidoContacto" do %>
+          <i class="fa fa-2x fa-angle-down"></i>
+        <% end %>
+      </div>
+    </div>
+    <div id="contenidoContacto" class ="formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Slogan',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :slogan5, :required => true, :class => "form-control input-l", :placeholder => "slogan 1", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+           <%= form.label 'Frase promocional',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :frase7, :required => true, :class => "form-control input-l", :placeholder => "frase 7" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Correo',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :correo, :required => true, :class => "form-control input-l", :placeholder => "correo", :required => true %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Telefono',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :telefono, :required => true, :class => "form-control input-l", :placeholder => "telefono" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Cuenta facebook',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :facebook,  :class => "form-control input-l", :placeholder => "facebook" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Cuenta twitter',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :twitter,  :class => "form-control input-l", :placeholder => "twitter" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="form-group">
+           <%= form.label 'Cuenta YouTube',  :class => "input-l",  :tabindex => "" %>
+           <%= form.text_field :google,  :class => "form-control input-l", :placeholder => "YouTube" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="form-group">
+              <%= form.label 'Selecciona el icono para esta sesión',  :class => "input-l",  :tabindex => "6" %>
+             <%= form.file_field :fondoContacto %>
+            </div>
+          </div>
+      </div>
+    </div>
+  <%= form.submit  :value =>'crear',  :class => 'btn btn-info' %> &nbsp; <%= link_to 'Back', admin_contenidos_path, :class => 'btn btn-info' %>
+  <% end %>
+</section>
+

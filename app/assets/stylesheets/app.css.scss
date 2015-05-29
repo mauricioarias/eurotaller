@@ -1,0 +1,444 @@
+// Place all the styles related to the siga controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- general --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.btn-info{
+  color: white;
+  background-color: #14B1BB !important;
+  border-color: #0F9FA8 !important;
+  letter-spacing: 1px;
+}
+.btn{
+    border-radius:0 !important;
+}
+
+.container{
+  div img{
+    vertical-align: middle;
+  }
+}
+.header-text{
+  padding:80px 0 80px 0;
+  h1{
+    font-size:30px;
+    text-transform:uppercase;
+  }
+  h5{
+    font-size:18px;
+    text-transform:capitalize;
+  }
+}
+
+.home-section {
+  padding-top: 0px !important;
+  display: block!important;
+  position: relative!important;
+  z-index: 120 !important;
+}
+.bordeRadius{
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 15px;
+  color: #fff !important;
+  margin-top: 10px;
+}
+.bordeRadius:hover, 
+.bordeRadius:focus{
+  border: 3px solid #fff !important;
+  text-decoration: none;
+  color: #fff !important;
+}
+.slogan{
+   h2{
+    color: #FFF;
+    text-shadow: none;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 0px;
+    border-color: #000;
+    border-style: none;
+    text-shadow: -1px 0 1px #000;
+    }
+  h4{
+    color: #FCFBEB;
+    text-shadow: -1px 0px 1px #333;
+    padding: 5px;
+    text-transform: none;
+  }
+}
+ 
+.modal-backdrop {
+ z-index: 0 !important; 
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- administrador --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+a{
+	text-decoration: none;
+	font-family:'Open-Sans', sans-serif;
+	color:#999;
+	font-size:13px;
+}
+.cursorDefault{
+	pointer-events: none;
+	cursor: default;
+}
+.content_login{
+	/*height: 300px;*/
+	width: 250px;
+	background: #fff;
+	text-align: center;
+	/*clear: left;
+	opacity:0.3;*/
+	box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.5);
+	font-family:'Open-Sans', sans-serif;
+
+  img{
+  	margin:20px 0 30px 0;
+  	max-width:200px;
+  }
+  input{
+  	border:none;
+  }
+  a{
+  	font-weight: 400 !important;
+  	font-size: 11px;
+  	cursor: pointer;
+  	color: rgb(33,33,0.6) !important;
+  	text-decoration: none;
+  }
+}
+.buttonDefault{ 
+  input,
+  a{
+  	padding:5px;
+  	cursor:pointer;
+  	background-color:#000;
+  	color:#fff !important;
+  	opacity:1;
+  	height: 20px;
+  	font-size:12px;
+  	text-transform: uppercase;
+  	margin:10px 0 10px 0;
+  	border:none;
+  }
+  input:hover,
+  a:hover{
+    background-color:#666;
+  }
+}
+.info input{
+	box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.5);
+}
+.buttons input{
+	padding:4px !important;
+}
+.forms{
+	width:80px;
+	text-align: center;
+	margin-top:20px;
+	opacity:0.3;
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- index -> menu--- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.navbar-brand{
+	padding:10px;
+}
+.menu a{
+	color:#333 ;
+	background-color: none !important;
+	letter-spacing: 1px;
+}
+.navbar-fixed-top{
+	top:0px !important;
+}
+.navbar-default {
+  padding: 8px !important;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #333 !important;
+}
+.navbar-toggle {
+  border: none !important;
+  border-radius:0 !important;
+}
+.navbar-default{ 
+  .navbar-toggle:focus, 
+  .navbar-toggle:hover{
+  	background-color: rgba(0,0,0,0.1) !important;
+  }
+  .navbar-collapse, 
+  .navbar-form{
+  	border: none;
+    padding:0px !important;
+  }
+}
+.navbar-nav {
+  margin:0 !important;
+  float: right !important;
+  text-align: right !important;
+}
+.nav>li>a{
+	padding: 5px 15px !important;
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- menu  -> contenidos--- --------- --------- ----- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+#menuContenido {
+  a{
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 200;
+  }
+  #logoMenu .navbar-brand{
+    padding:0 !important;
+    height:50px !important;
+  }
+  #logoMenu, 
+  #opciones{
+      vertical-align: middle;
+  }
+}
+@media (min-width: 768px){
+  #menuContenido{
+    a{
+        font-size: 13px !important;
+    }
+  }
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- index -> header--- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+header {
+  text-align: center;
+  color: #fff;
+  padding-top: 7%;
+  
+  .intro-text {
+      padding-top: 70px;
+     /* padding-bottom: 50px;*/
+  }
+
+  .intro-text .intro-lead-in {
+      margin-bottom: 25px;
+      font-family: ""Droid Serif","Helvetica Neue",Helvetica,Arial",sans-serif;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+
+  }    
+}
+.intro{
+  width:100%;
+  position:relative;
+}
+.introIndex {
+    height: 100%;
+  }
+.linkPagina {
+  h3{
+  color: #333 !important;
+ }
+  a:hover{
+    text-decoration: none !important;
+   }
+}
+
+/*----- slogan intro ------ */
+.slogan{
+  padding: 1%;
+  margin-bottom: 5%;
+  text-align:center;
+
+  img{
+      max-width:250px;
+  }
+}
+/*----- play intro------ */
+.intro-lead-in span{
+    padding: 25px;
+    color:#000;
+    background-color: rgba(255,255, 255, 0.9);
+    border-radius: 50%;
+    font-size:23px;
+    text-align: center;
+    margin:50px 0 0 0;
+}
+.service-icon:hover{
+  ms-transform: scale(1.02); 
+  -webkit-transform: scale(1.02); 
+  -webkit-transition: all ease 0.05s;
+  -moz-transition: all ease 0.05s;
+  transition: all ease 0.05s; 
+  cursor: pointer;
+}
+
+header .intro-text .intro-heading {
+    margin: 30px;
+    text-transform: none;
+    font-family: "Open-Sans",sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0.5);
+    padding:20px;
+}
+
+@media(min-width:768px) {
+
+    header .intro-text .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- caracteristicas (detalles) --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.caracteristicas{
+  width:100%;
+  height:40%;
+  position:relative;
+  .slogan {
+    padding-top:90px;
+  }
+  h3{
+    color: #fff;
+    font-family: "raleway-regular";
+    font-size: 14px;
+    font-weight: normal!important;
+    margin: 20px 0 0 0;
+  } 
+  .modal-header{
+    img,
+    h4{
+      vertical-align: middle;
+    }
+  }
+}
+
+#caracteristicas{ 
+  header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+  }
+  .col-md-3{
+    width: 33.3% !important;
+  }
+}
+@media(max-width:800px) {
+  #caracteristicas .col-md-3{
+      width: 100% !important;
+    }
+    .col-xs-3{
+      width: 100% !important;
+    }
+  #siga .col-md-3{
+    width: 100% !important;
+  }
+}
+
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- unete a eurotaller --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+
+.unete{
+  width:100%;
+  position:relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+
+  .slogan {
+    padding-top:90px;
+  }
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- talleres --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.talleres{
+  width:100%;
+  height: 100%;
+  position:relative;
+  background-color:#464646;
+  .slogan {
+    padding:8% 5% 5% 5%;
+    margin: none;
+    margin-bottom: 0 !important;
+  }
+  h3{
+      color: #fff;
+      font-family: "raleway-regular";
+      font-size: 14px;
+      font-weight: normal!important;
+      margin:5px 0 0 0;
+  } 
+  header {
+      text-align: center;
+      color: #fff;
+      background-attachment: scroll;
+      background-repeat: none;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+  }
+  .centro{
+     padding: 6px 0px !important;
+     font-size: 18px;
+  }
+
+}
+#mapa{
+  min-height: 50px;;
+  h5{
+    text-transform: none;
+  }
+}
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+/* --------- contacto --- --------- --------- -------- */
+/* -----  ------ ------ ------  -----  ------ ------ ------ */
+.contacto{
+  width:100%;
+  height:40%;
+  position:relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+  .contacto .slogan {
+    padding-top:90px;
+  }
+  .contacto h3{
+      color: #fff;
+      font-family: "raleway-regular";
+      font-size: 14px;
+      font-weight: normal!important;
+      margin: 20px 0 0 0;
+  } 
+  .slogan {
+    padding-top:90px;
+  }
+}
+.altoFijo {
+  height: 150px !important;
+}
+
+
+  

@@ -1,0 +1,80 @@
+<section id="mapa" class="home-section text-center bg-gray">
+	<% @contenido.each do |contenido| %>
+		<div class="heading-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow fadeInDown animated" data-wow-delay="0.4s">
+							<div class="section-heading">
+								<h5><%= contenido.frase4 %></h5>
+								<h4><%= contenido.frase4 %></h4>
+								<%= link_to "#intro" do %>
+									<i class="fa fa-2x fa-angle-down"></i>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<div class="container">
+		<p>Talleres de la red</p><br>
+		<div class="formulario">
+			<div class="row">
+				<div class="col-xs-12 ">
+					<div class="form-group">
+						<%= form_tag(admin_miembros_path, :method => "get", id: "search-form") do %>
+							<%= text_field_tag :search, params[:search], placeholder: "buscar taller" %>
+							<%= submit_tag "Buscar" %>
+						<% end %>
+						<% if @miembros.present? %>
+						  <%= render @miembros %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div><br><br>
+		<% @miembro.each do |miembro| %>
+			<div id="mapa" class ="formulario">
+      			<div class="row">
+      				<div class="col-xs-12 ">
+			          <div class="form-group">
+			            <strong class="subtitulo"><%=  miembro.nombreTaller %> </strong>
+			          </div>
+			        </div>
+				</div>
+				<div class="row">
+      				<div class="col-xs-12 col-sm-4 col-md-4">
+			          <div class="form-group">
+			            <iframe src="<%=  miembro.mapa %>" width="250" height="200"></iframe><br>
+			          </div>
+			        </div>
+			        <div class="col-xs-12 col-sm-3 col-md-3">
+			          <div class="form-group">
+			          	<strong>Nombre de contacto: </strong>
+	    				<%= miembro.nombreContacto %>
+			          </div>
+			          <div class="form-group">
+			          	<strong>Direccion: </strong>
+	    				<%= miembro.direccion %>
+			          </div>
+			          <div class="form-group">
+			          	<strong>Teléfono: </strong>
+	    				<%= miembro.telefono %>
+			          </div>
+			          <div class="form-group">
+			          	<strong>Ciudad: </strong>
+	    				<%= miembro.ciudad %>
+			          </div>
+			          <div class="form-group parrafo">
+	    				<%=  miembro.comentario %> 
+			          </div>
+			        </div>
+				</div>
+			</div>
+			 <hr class="marginbot-5">
+		<% end %>	
+		
+	</div>
+</section>

@@ -1,0 +1,156 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+	<!-- intro -->
+    <section id="intro" class="talleres" style="background: url(<%= contenido.fondoTalleres.url %>); background-position: top center; background-repeat: no-repeat;  background-size: cover; height: 200px;">
+		<div class="slogan  wow fadeInUp animated">
+			<div class=" wow fadeInUp animated">
+				<h2> <%= contenido.slogan3 %></h2>
+			</div>
+		</div>
+    </section>
+<% end %>
+<section  class=" home-section text-center bg-gray " style=" min-height: 400px;">
+	<div class="container" style="text-align: left;">
+		<div class="row " >
+			<br>
+			<div class="col-xs-12 col-sm-8 col-md-8 " >
+				<%= form_tag(miembros_path, :method => "get", id: "search-form") do %>
+					<%= text_field_tag :search, params[:search], placeholder: "buscar taller" %>
+					<%= submit_tag "Buscar" %> &nbsp; &nbsp; &nbsp;
+					<a><%= link_to  'ver todos los talleres', talleres_path,  :style => " text-transform: uppercase !important;" %></a>
+				<% end %>
+				<% if @miembros.present? %>
+				  <%= render @miembros %>
+				<% end %>
+			</div>
+		</div><br>
+		<div id="mapa" >
+			<% @miembro.order("\"nombreTaller\"").each do |miembro| %>
+			<div  class ="formulario wow fadeInUp animated">
+      			<div class="row">
+		          	<div class="col-xs-3 col-sm-3 col-md-3" style="margin-right:20px;">
+			          <div class="form-group">
+			          	<%= image_tag miembro.logo.url, :class =>"img-responsive", :style =>"max-width: 95px !important; "%>
+			          </div>
+			        </div>
+				</div>
+				<div class="row">
+      				<div class="col-xs-3 col-sm-4 col-md-4 verMapa">
+			          <div class="form-group" >
+			            <iframe src="<%=  miembro.mapa %>" width="100%" height="200"></iframe><br>
+			          </div>
+			        </div>
+			        <div class="col-xs-3 col-sm-4 col-md-4">
+			          <div class="form-group">
+			          	
+			            	<%= image_tag miembro.fotoTaller.url, :class =>"img-responsive", :style =>"max-width: 100% !important; cursor: pointer;"%>
+			            </a>
+			          </div>
+			        </div>
+			        <div class="col-xs-3 col-sm-3 col-md-3">
+			          <div class="form-group">
+			          	<strong style="text-transform:uppercase; "><%=  miembro.nombreTaller %></strong><br>
+			          	<strong><%= miembro.nombreContacto %></strong><br>
+	    				<p><%= miembro.direccion %> | <%= miembro.ciudad %> </p>
+	    				<strong>Teléfono: </strong>
+	    				<%= miembro.telefono %><br>
+	    				<strong>Fax: </strong>
+	    				<%= miembro.fax %><br>
+	    				<strong>Página Web: </strong>
+	    				<%= miembro.pagina %><br>
+	    				<strong>Horario: </strong>
+	    				<%= miembro.horario %><br>
+	    				<strong>Cita previa: </strong>
+	    				<%= miembro.cita %><br>
+	    				<strong>Servicio de grúa: </strong>
+	    				<%= miembro.grua %><br>
+	    				<strong>Marca vehículo: </strong>
+	    				<%= miembro.marcaVehiculo %><br>
+	    				<a data-toggle="modal" data-target="#<%= miembro.id %>"  style="cursor:pointer; color:blue;"> Ver fotos</a>
+			          </div>
+			        </div>
+			    </div>
+			    <div class="row">
+			         <div class="col-xs-12 col-sm-8 col-md-8">
+			          <div class="form-group">
+			          	 <div class=" parrafo">
+		    				<%=  miembro.comentario %> 
+				          </div>
+			          </div>
+			        </div>
+				</div>
+			</div>
+			 <hr class="marginbot-5">
+		<% end %>	
+		</div> 
+ 		
+	</div>
+</section>
+<% @miembro.order("\"nombreTaller\"").each do |miembro| %>
+	<div id="<%= miembro.id %>" class="modal fade bs-modal-modal-lg" tabindex="-1" role="dialog">
+	    <div class="modal-dialog modal-lg" style="margin-top:12% !important;   width: 40% !important; ">
+	        <div class="modal-content background-color:rgba(255,255,255,0.5) !mportant;">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                <%= image_tag miembro.logo.url, :class => "img-responsive  logoConvenio", :style =>"float:left; max-width:30px !important; " %>
+		            <h4 class="modal-title"><%=  miembro.nombreTaller %></h4>
+	            </div>
+	            <div class="modal-body">
+	            	<!-- inicio carousel \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+					<div id="carousel<%= miembro.id %>" class="carousel slide" data-ride="carousel">
+				    <!-- Wrapper for slides -->
+					    <div class="row">
+					        <div class="">
+					            <div class="carousel-inner">
+					                <div class="item active">
+					                    <div class="carousel-content">
+					                        <div>
+					                             <%= image_tag miembro.foto1.url, :class =>"img-responsive", :style =>"max-width: 100% " %>
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="item">
+					                    <div class="carousel-content">
+					                        <div>
+					                             <%= image_tag miembro.foto2.url, :class =>"img-responsive", :style =>"max-width: 100% "%>
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="item">
+					                    <div class="carousel-content">
+					                        <div>
+					                             <%= image_tag miembro.foto3.url,:class =>"img-responsive", :style =>"max-width: 100% " %>
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="item">
+					                    <div class="carousel-content">
+					                        <div>
+					                             <%= image_tag miembro.foto4.url,:class =>"img-responsive", :style =>"max-width: 100% " %>
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <!-- Controls -->
+					     <a class="left carousel-control" href="#carousel<%= miembro.id %>" data-slide="prev" style="background: transparent !important;">
+						    <span class="glyphicon glyphicon-chevron-left"></span>
+						  </a>
+						 <a class="right carousel-control" href="#carousel<%= miembro.id %>" data-slide="next" style="background: transparent !important;">
+						    <span class="glyphicon glyphicon-chevron-right"></span>
+							 </a>
+					</div>
+					<!-- fin carousel \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+<script>
+ $(document).ready(function (){
+    $("#s3 a").css('color','#138bbe');
+  });
+</script>
+	

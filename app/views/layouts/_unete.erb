@@ -1,0 +1,75 @@
+
+<% @contenido.each do |contenido| %>
+	<section id="porqueUnirse" class="home-section text-center bg-gray ">
+	<br>
+		<div class="heading-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s; paddin:0 !important;">
+							<%= raw contenido.frase3 %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<hr class="marginbot-20">
+				</div>
+			</div>
+		    <div class="row">
+		        <div class="col-sm-3 col-md-3">
+					<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+		            <div class="service-box">
+						<div class="">
+							<%= image_tag contenido.imgFormacion.url, :style => "min-width:200px !important;" %>
+						</div>
+						<div class="service-desc">
+							<p style="text-align: justify;"><%= contenido.formacion %></p>
+						</div>
+		            </div>
+					</div>
+		        </div>
+		        <div class="col-sm-3 col-md-3">
+					<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+		            <div class="service-box">
+						<div class="">
+							<%= image_tag contenido.imgInfomacion.url, :style => "min-width:200px !important;" %>
+						</div>
+						<div class="service-desc">
+							<p style="text-align: justify;"><%= contenido.informacion %></p>
+						</div>
+		            </div>
+					</div>
+		        </div>
+		        <div class="col-sm-3 col-md-3">
+					<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+		            <div class="service-box">
+						<div class="">
+							<%= image_tag contenido.imgImagen.url, :style => "min-width:200px !important;" %>
+						</div>
+						<div class="service-desc">
+							<p style="text-align: justify;"><%= contenido.imagenEurotaller %></p>
+						</div>
+		            </div>
+					</div>
+		        </div>
+				<div class="col-sm-3 col-md-3">
+					<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+		            <div class="service-box">
+						<div class="">
+							<%= image_tag contenido.imgMarketing.url, :style => "min-width:200px !important;" %>
+						</div>
+						<div class="service-desc">
+							<p style="text-align: justify;"><%= contenido.marketing %></p>
+						</div>
+		            </div>
+					</div>
+		        </div>
+				
+		    </div>		
+		</div>
+	</section>
+<% end %>

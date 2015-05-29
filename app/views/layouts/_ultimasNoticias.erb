@@ -1,0 +1,52 @@
+<section class="home-section text-center bg-gray " id="Ultimanoticia">
+	<br><br><br><br>
+	<div class="row">
+		<div class="heading-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
+							<div class="section-heading linkPagina">
+								<% @nombre.each do |nombre| %>
+									<%= link_to verNoticia_path  do  %>
+										<h3><%= nombre.sesion4 %></h3>
+									<% end %>
+								<% end %>
+								<%= link_to   ('#intro') do  %>
+									<i class="fa fa-2x fa-angle-up" style="margin-bottom:0!important;"></i>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<hr class="marginbot-20">
+			</div>
+		</div>
+	</div>
+	<div class="row wow fadeInLeft animated">
+		<div class="rightPost col-xs-12" id="vista">
+			<% @noticia.order('created_at DESC').limit(1).each do |noticia| %>
+	          	<div class="wow fadeInLeft" data-wow-delay="0.2s">
+		            <div class="team boxed-grey   bg-gray ">
+						<div class="inner">
+							<div class="imgNoticia">
+								<strong class="subtitulo" id="<%=  noticia.titulo %>"><%=  noticia.titulo %> </strong>
+								<br>
+					    		<%= image_tag noticia.image.url, :class =>"img-responsive img-circle" %><br>
+					    	</div>
+					    	<div class="parrafo">
+								<%= raw noticia.descripcion %> <br><br>
+								<%= link_to 'ver más' , verNoticia_path , :class => ' btn-info', :style =>'padding:5px;' %>
+							</div>
+
+						</div>
+					</div> 
+				</div>
+	      	<% end %>
+		</div>
+	</div>
+</section>

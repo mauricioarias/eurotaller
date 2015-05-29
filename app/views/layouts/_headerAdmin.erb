@@ -1,0 +1,17 @@
+<nav class = "headerAdmin">
+	<div class="logoAdmin">
+		<%= link_to (image_tag "logoAdmin.png"), root_path %>
+	</div>
+	<ul class = "navAdmin">
+		<a class="username"><%= current_admin.email %></a> 
+		<a>&nbsp; | &nbsp;</a>
+		<%= link_to 'Web', root_path %>
+		<a>&nbsp; | &nbsp;</a>
+		<%= link_to "Salir", destroy_admin_session_path, :method => :delete %>
+		<!--a>&nbsp; | &nbsp;</a-->
+		<!--%- if controller_name != 'sessions' %>
+		  < %= link_to "sign_up", new_usuario_registration_path%><br/-->
+		  <!-- para crear un usuario desde una cuenta, descomentar before_filter :avoid_sign_in, only: [:create, :new], if: :signed_in en registrations_controller -->
+		<!--% end -%-->
+	</ul>
+</nav>

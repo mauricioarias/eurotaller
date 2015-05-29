@@ -1,0 +1,157 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row ">
+		<div class="row formulario"  style="text-align: left;">
+			<br>
+			<div class="col-xs-12 col-sm-6 col-md-6" >
+				<%= form_tag(admin_miembros_path, :method => "get", id: "search-form") do %>
+					<%= text_field_tag :search, params[:search], placeholder: "buscar taller" %>
+					<%= submit_tag "Buscar" %>
+				<% end %>
+				<% if @miembros.present? %>
+				  <%= render @miembros %>
+				  <%= lin_to 'atras', :back %>
+				<% end %>
+			</div>
+		</div>
+		<% @miembro.order("\"nombreTaller\"").each do |miembro| %>
+			<div  class ="formulario"><br>
+		      	<div class="row">
+					<div class="col-xs-12 ">
+					  <div class="form-group">
+					    <h5><strong><%= miembro.nombreTaller %></strong></h5>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3">
+		            	<div class="form-group">
+		           			<strong>Nombre de contacto: </strong>
+		    				<%= miembro.nombreContacto %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+		            	<div class="form-group">
+		           			<strong>Direccion: </strong>
+		    				<%= miembro.direccion %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+		            	<div class="form-group">
+		           			<strong>Fax: </strong>
+		    				<%= miembro.fax %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+		            	<div class="form-group">
+		           			<strong>Teléfono: </strong>
+		    				<%= miembro.telefono %>
+				  		</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3">
+		            	<div class="form-group">
+		           			<strong>Ciudad: </strong>
+		    				<%= miembro.ciudad %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+		           			<strong>Horario: </strong>
+		    				<%= miembro.horario %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+		           			<strong>Marca vehículo: </strong>
+		    				<%= miembro.marcaVehiculo %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+		           			<strong>Web: </strong>
+		    				<%= miembro.pagina %>
+				  		</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+		           			<strong>Servicio de grua: </strong>
+		    				<%= miembro.grua %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+		           			<strong>Cita previa: </strong>
+		    				<%= miembro.cita %>
+				  		</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+		            	<div class="form-group">
+		           			<strong>Url Mapa: </strong>
+		    				 <%= miembro.mapa %>
+				  		</div>
+					</div>
+				</div>
+				<div class="row">
+		         
+		        <div class="col-xs-12 col-sm-3 col-md-3">
+		            <div class="form-group">
+		              <h6> Imágen 1 galería </h6>
+		              <%= image_tag miembro.foto1.url, :class =>"img-responsive",  :style=>"max-width:100px !important;"%>
+		            </div>
+		        </div>
+		        <div class="col-xs-12 col-sm-3 col-md-3">
+		            <div class="form-group">
+		              <h6> Imágen 2 galería </h6>
+		              <%= image_tag miembro.foto2.url, :class =>"img-responsive",  :style=>"max-width:100px !important;"%>
+		            </div>
+		        </div>
+		        <div class="col-xs-12 col-sm-3 col-md-3">
+		            <div class="form-group">
+		              <h6> Imágen 3 galería </h6>
+		              <%= image_tag miembro.foto3.url, :class =>"img-responsive",  :style=>"max-width:100px !important;"%>
+		            </div>
+		        </div>
+		        <div class="col-xs-12 col-sm-3 col-md-3">
+		            <div class="form-group">
+		              <h6> Imágen 4 galería </h6>
+		              <%= image_tag miembro.foto4.url, :class =>"img-responsive",  :style=>"max-width:100px !important;"%>
+		            </div>
+		        </div>
+				
+			</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3">
+			            <div class="form-group">
+			              <h6> Imágen principal </h6>
+			              <%= image_tag miembro.fotoTaller.url, :class =>"img-responsive", :style=>"max-width:100px !important;" %>
+			            </div>
+			        </div>
+			        <div class="col-xs-12 col-sm-3 col-md-3">
+			            <div class="form-group">
+			              <h6> Logo del taller </h6>
+			              <%= image_tag miembro.logo.url, :class =>"img-responsive" ,  :style=>"max-width:100px !important;" %>
+			            </div>
+			        </div>
+
+					<div class="col-xs-12 col-sm-6 col-md-6">
+	            		<div class="form-group">
+		           			<strong>Comentario: </strong>
+		    				<p><%= miembro.comentario %></p>
+				  		</div>
+					</div>
+				</div>		
+			 	<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="form-group">
+						<%=  link_to 'Editar', edit_admin_miembro_path(miembro), :class => 'btn btn-info'%>
+						<%= link_to 'Eliminar', admin_miembro_path(miembro), :class => 'btn btn-info', method: :delete, :onclick => "return confirm('Estas seguro de eliminar este taller?')" %>
+						</div> 	
+				 	</div>
+				</div>
+			</div> 
+ 		<% end %>
+	</div>
+</section>

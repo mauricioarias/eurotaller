@@ -1,0 +1,34 @@
+<div class="row formulario rowPadding bg-gray">
+  <%= form_for @categoria, :url => admin_categorias_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del nombre-->
+      <% if @categoria.errors.any? %>
+        <div id="error_explanation">
+          <a><%=pluralize(@categoria.errors.count, "Error")%> , Esta  categoria no puede ser guardada:</a> 
+          <ul>
+            <% @categoria.errors.full_messages.each do |msg| %>
+              <li><a><%= msg %></a></li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>
+      <br>
+  <div  class ="formulario">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-6">     
+         <strong>Crear categoría</strong><br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="form-group">
+          <%= form.label 'Nombre de la categoría',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_area :nombre,  :class => "form-control input-l", :placeholder => "1 palabra" %>
+        </div>
+        <p>
+          <%= form.submit  :value =>'guardar',  :class => 'btn btn-info' %>
+        </p>
+      </div>
+    
+  <% end %>
+</div>
+

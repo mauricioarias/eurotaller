@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eurotaller</title>
+  <%= stylesheet_link_tag "application",  media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.png' %>
+</head>
+<body class="bodyAdmin">
+	<% if admin_signed_in? %>
+		<%=  render :partial => "layouts/headerAdmin" %>
+		<%=  render :partial => "layouts/menuAdmin" %>
+		<section class="contentAdmin admin_cont">
+			<%= yield %>
+		</section>
+	<% else %>
+		<div class="fondo"> 
+		    <section class="content_login "><br><br>
+				<%= link_to (image_tag "logoAdmin.png"), root_path %>
+				<h5>Necesitas abrir tu sesión</h5>
+				<%- if controller_name != 'sessions' %>
+				  <h1><%= link_to "Ingresar", new_admin_session_path, :class => "botonIngreso "  %><h1><br />
+				<% end -%>
+			</section>
+		</div>
+	<% end %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

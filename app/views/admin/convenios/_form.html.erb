@@ -1,0 +1,62 @@
+<div class="row formulario rowPadding bg-gray">
+  <%= form_for @convenio, :url => admin_convenios_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del titulo-->
+      <% if @convenio.errors.any? %>
+        <div id="error_explanation">
+          <a><%=pluralize(@convenio.errors.count, "Error")%> , Este convenio no puede ser guardado:</a> 
+          <ul>
+            <% @convenio.errors.full_messages.each do |msg| %>
+              <li><a><%= msg %></a></li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>
+      <br>
+  <div id="contenidoInicio" class ="formulario">
+     <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-6">     
+           <strong>Crear Convenio</strong><br><br>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="form-group">
+          <%= form.label 'Nombre',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :nombre,  :class => "form-control input-l", :placeholder => "Nombre del convenio o de la empresa" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Fecha de validez',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :fecha,  :class => "form-control input-l", :placeholder => "d/m/a Inicio  - a/m/a Fin " %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Logo de la empresa',  :class => "input-l",  :tabindex => "" %><br>
+          <%= form.file_field :logo %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 ">
+        <div class="form-group">
+          <%= form.label 'Descripción',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_area :descripcion,  :class => "form-control input-l altoFijo ", :placeholder => "Descripción" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 ">
+        <div class="form-group">
+          <%= form.label 'Ampliar información',  :class => "input-l",  :tabindex => "" %>
+         <%= form.cktext_area :detalles,  :class => "form-control input-l altoFijo ", :placeholder => "detalles del convenio" %>
+        </div>
+      </div>
+    </div>
+    <p>
+      <%= form.submit  :value =>'guardar',  :class => 'btn btn-info' %>
+    </p>
+  <% end %>
+</div>
+

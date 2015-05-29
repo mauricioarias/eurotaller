@@ -1,0 +1,77 @@
+<% @contenido.each do |contenido|  %>
+<section id="caracteristicas" class="home-section text-center bg-gray " >
+	<br><br><br><br>
+	<div class="heading-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="wow fadeInDown animated" data-wow-delay="0.4s" style="-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
+						<div class="section-heading linkPagina">
+							<% @nombre.each do |nombre| %>
+								<%= link_to detalles_path  do  %>
+									<h3><%= nombre.sesion1 %></h3>
+								<% end %>
+							<% end %>
+							<%= link_to   ('#porqueUnirse') do  %>
+								<i class="fa fa-2x fa-angle-down" style="margin-bottom:0!important;"></i>
+							<% end %>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+	<div class="row">
+		<div class="col-lg-2 col-lg-offset-5">
+			<hr class="marginbot-20">
+		</div>
+	</div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3">
+			<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+            <div class="service-box">
+				<div class="">
+					<%= link_to detalles_path do %>
+					<%= image_tag contenido.imgRespalfo.url , :style => "max-width: 180px;" %>
+					<%end %>
+				</div>
+				<div class="service-desc">
+					<p><%= raw contenido.masRespaldo %></p>
+				</div>
+            </div>
+			</div>
+        </div>
+		<div class="col-sm-3 col-md-3">
+			<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+            <div class="service-box">
+				<div class="">
+					<%= link_to detalles_path do %>
+					<%= image_tag contenido.imgBeneficios.url, :style => "max-width: 180px;" %>
+					<%end %>
+				</div>
+				<div class="service-desc">
+					<p><%= raw contenido.masBeneficios %></p>
+				</div>
+            </div>
+			</div>
+        </div>
+		<div class="col-sm-3 col-md-3">
+			<div class="wow fadeInLeft animated" data-wow-delay="0.2s">
+            <div class="service-box">
+				<div class="">
+					<%= link_to detalles_path do %>
+					<%= image_tag contenido.imgConvenios.url , :style => "max-width: 180px;" %>
+					<%end %>
+				</div>
+				<div class="service-desc">
+					<p><%= raw contenido.convenios %></p>
+				</div>
+            </div>
+			</div>
+        </div>
+    </div>		
+	</div>
+</section>
+<% end %>

@@ -1,0 +1,18 @@
+<section class="contentAdmin bg-gray">
+	 <div class="row formulario">
+		<h6>Experiencia sesiones</h6>
+	    <p>
+		  <strong>Nombre:</strong>
+		  <%= @contenido.descripcion %>
+		</p>
+	    <p>
+	      <%= image_tag @contenido.fondoInicio.url %>
+	    </p>
+	    <p>
+		  <%= @contenido.descripcion %>
+		</p>
+	    <p>
+	    	<%= link_to 'Back', admin_contenido_path, :class => 'btn btn-info' %>
+	    </p>
+	</div>
+</section>

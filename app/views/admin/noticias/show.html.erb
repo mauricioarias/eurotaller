@@ -1,0 +1,28 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row">
+			 <div  class ="formulario"><br><br>
+		      <div class="row">
+		        <div class="col-xs-12 col-sm-6 col-md-6">
+		          <div class="form-group">
+		            <h6>Titulo: <%= @noticia.titulo %></h6>
+		             <h6>Categoría: <%= @noticia.categoria %></h6>
+		             <h6>Descripción</h6>
+		             <p><%= raw @noticia.descripcion %></p>
+		             <h6>Contenido</h6>
+		             <p><%= raw @noticia.contenido %></p>
+		          </div>
+		        </div>
+				<div class="col-xs-12 col-sm-3 col-md-3">
+					<div class="form-group">
+					  <h6>Imagen Principal </h6>
+					  <%= image_tag @noticia.image.url, :class =>"img-responsive " %>
+					</div>
+				</div>
+		      </div>			 	
+		      <a>
+		 		<%= link_to 'Editar', edit_admin_noticia_path(@noticia) %> | 
+		 		<%= link_to 'Eliminar', admin_noticia_path(@noticia), method: :delete, :onclick => "return confirm('Estas seguro de eliminar esta noticia?')" %>
+			 	</a>
+		 	</div> 
+	</div>
+</section>

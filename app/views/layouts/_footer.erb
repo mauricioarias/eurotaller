@@ -1,0 +1,49 @@
+<% @contenido.each do |contenido| %>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="wow shake" data-wow-delay="0.4s">
+                    <div class="page-scroll">
+                        <%= link_to ('#intro') do %>
+                            <i class="glyphicon glyphicon-menu-up animated bordeRadius"></i>
+                        <% end %>
+                    </div>
+                </div>
+                <ul>
+                    <h5> Datos de Contacto</h5>
+                    <li><a href="mailto:<%= contenido.correo %>"><%= contenido.correo %></a></li>
+                    <li><%= contenido.telefono %></li>
+                </ul>
+                <ul>
+                  <h5>Redes Sociales</h5>
+                    <ul class="company-social">
+                        <li class="social-facebook"><a href="<%= contenido.facebook %>" target="_blank"><i class="fa fa-facebook" style="  font-size: 15px;"></i></a></li>
+                        <li class="social-twitter"><a href="<%= contenido.twitter %>" target="_blank"><i class="fa fa-twitter" style="  font-size: 15px;"></i></a></li>
+                        <li class="social-youtube" ><a href="<%= contenido.google %>" target="_blank" style="  font-size: 15px;"><i class="fa fa-youtube"></i></a></li>
+                    </ul> 
+                </ul>
+                <ul>
+                    <h5> Con el Respaldo de</h5>
+                    <li> 
+                        <a href="http://www.groupautointernational.com/" target="_blank" class='texto'>Groupauto Internacional</a>
+                    </li>
+                    <li>
+                        <a href="http://www.groupautoamericacentral.com/" target="_blank" class='texto'> Groupauto América Central</a>
+                    </li>
+                </ul>
+                <ul style="text-align:left;">
+                    <% @nombre.each do |nombre| %>
+                        <li><%= link_to nombre.sesion1 , detalles_path, :class =>'texto' %></li>
+                        <li><%= link_to nombre.sesion2 , unete_path, :class =>'texto' %></li>
+                        <li><%= link_to nombre.sesion3 , talleres_path, :class =>'texto' %></li>
+                        <li><%= link_to nombre.sesion4 , verNoticia_path, :class =>'texto' %></li>
+                        <li><%= link_to nombre.sesion5 , contacto_path, :class =>'texto' %></li>
+                    <% end %>
+                </ul>
+                <p>© EuroTaller Colombia 2015 &nbsp; &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <%= link_to 'MAWESI Design+Development', "http://www.mawesi.net/mawesi/", :style => "color:#fff; text-decoration: none; font-family: inherit;", :target => "_blank" %></p>
+            </div>
+        </div>  
+    </div>
+</footer>
+<% end %>

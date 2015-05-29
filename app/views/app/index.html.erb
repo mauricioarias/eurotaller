@@ -1,0 +1,36 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<!-- intro -->
+
+<% @contenido.each do |contenido| %>
+	<section class="intro introIndex style2 right dark fullscreen" id="intro" style="background: url(<%= contenido.fondoInicio.url %>); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; padding: 80px 0;">
+		<header>
+			<div class="container  text-center" data-wow-delay="0.2s">
+				<div class="row wow fadeInUp  animated">
+				 	<div class="intro-text">
+						<div class="intro-lead-in flipInX  animated"  data-wow-delay="0.2s">
+							<ul class="gallery clearfix"></ul>
+							<%= link_to 'http://www.youtube.com/watch?v=kh29_SERH0Y?rel=0', :rel => 'prettyPhoto', :title => 'Eurotaller' do %>
+								<span class="glyphicon glyphicon-play service-icon "></span>
+							<% end %>
+						</div>
+						<h5 style="color:#fff; text-transform:none; font-size:18px;"><%= contenido.fraseInicio %></h5>
+						<br><br><br>
+			            <%= link_to 'Más de EuroTaller', ('#caracteristicas') , :class=> "btn btn-info service-icon" %> &nbsp;
+			            <%= link_to  talleres_path , :class=> " btn btn-info service-icon" do %>
+			           	 	<% @nombre.each do |nombre| %>
+			            		<%= nombre.sesion3 %>
+			            	<% end %>
+			            <% end %>  
+			        </div>
+			    </div>
+			</div>
+		</header>
+	</section>
+
+<%=  render :partial => "layouts/beneficios" %>
+<%=  render :partial => "layouts/porqueUnirse" %>
+<%=  render :partial => "layouts/ultimasNoticias" %>
+
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+

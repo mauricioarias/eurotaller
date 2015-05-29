@@ -1,0 +1,17 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row">
+		 <div  class ="formulario"><br><br>
+		 	<div class="row">
+	      		<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<strong>Categoría:&nbsp;&nbsp;<%= @categoria.nombre %></strong><br>
+		     			 <a>
+					 		<%=  link_to 'Editar', edit_admin_categoria_path(@categoria)%> | 
+					 		<%= link_to 'Eliminar', admin_categoria_path(@categoria), method: :delete, :onclick => "return confirm('Estas seguro de eliminar esta categoría?')" %>
+			 			</a>
+			 		</div> 	
+			 	</div>
+			</div>
+		</div>
+	</div>
+</section>

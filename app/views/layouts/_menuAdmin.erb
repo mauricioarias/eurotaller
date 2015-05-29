@@ -1,0 +1,37 @@
+<section class= "leftSection">
+	<ul>
+		<h4>Sesiones</h4>
+		<div class="options">
+			<li><%= link_to "ver contenido", admin_contenidos_path %></li>
+		</div>
+	</ul>
+	<ul>
+		<h4>Menú</h4>
+		<div class="options">
+			<li><%= link_to "ver", admin_nombres_path %></li>
+		</div>
+	</ul>
+	<ul>
+		<h4>noticias</h4>
+		<div class="options">
+			<li><%= link_to "Ver noticias", admin_noticias_path %></li>
+			<li><%= link_to "Crear noticias", new_admin_noticia_path %></li>
+			<li><%= link_to "Ver categorías", admin_categorias_path %></li>
+			<li><%= link_to "Crear Categoria", new_admin_categoria_path %></li>
+		</div>
+	</ul>
+	<ul>
+		<h4>Talleres</h4>
+		<div class="options">
+			<li><%= link_to "Ver todos", admin_miembros_path %></li>
+			<li><%= link_to "Crear", new_admin_miembro_path %></li>
+		</div>
+	</ul>
+	<ul>
+		<h4>Convenios</h4>
+		<div class="options">
+			<li><%= link_to "Ver todos", admin_convenios_path %></li>
+			<li><%= link_to "Crear", new_admin_convenio_path %></li>
+		</div>
+	</ul>
+</section>

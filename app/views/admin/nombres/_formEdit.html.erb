@@ -1,0 +1,66 @@
+<div class="row formulario rowPadding bg-gray">
+  <%= form_for @nombre, :url => admin_nombre_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del nombre-->
+      <% if @nombre.errors.any? %>
+        <div id="error_explanation">
+          <a><%=pluralize(@nombre.errors.count, "Error")%> , Este nombre para el menu no puede ser guardada:</a> 
+          <ul>
+            <% @categoria.errors.full_messages.each do |msg| %>
+              <li><a><%= msg %></a></li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>
+      <br>
+  <div  class ="formulario">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-6">     
+         <strong>Editar nombres del menú para las sesiones</strong><br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Sesión 1',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :sesion1,  :class => "form-control input-l", :placeholder => "Beneficios de estar en la red." %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Sesión 2',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :sesion2,  :class => "form-control input-l", :placeholder => "Sesión para talleres." %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Sesión 3',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :sesion3,  :class => "form-control input-l", :placeholder => "Sesión para usuarios, buscar talleres." %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Sesión 4',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :sesion4,  :class => "form-control input-l", :placeholder => "Noticias" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Sesión 5',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :sesion5,  :class => "form-control input-l", :placeholder => "Contacto" %>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <p>
+              <%= form.submit  :value =>'guardar',  :class => 'btn btn-info' %>
+            </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+

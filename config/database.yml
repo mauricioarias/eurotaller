@@ -1,0 +1,18 @@
+efault: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: '5'
+
+development:
+  <<: *default
+  database: eurotaller_development
+
+test:
+  <<: *default
+  database: eurotaller_test
+
+production:
+  <<: *default
+  database: eurotaller_production
+#  username: eurotaller
+#  password: <%= ENV['EUROTALLER_DATABASE_PASSWORD'] %>

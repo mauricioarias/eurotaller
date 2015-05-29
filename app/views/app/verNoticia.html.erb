@@ -1,0 +1,68 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+    <section id="intro" class="noticias" style="background: url(<%= contenido.fondoNoticias.url %>); background-position: top center; background-repeat: no-repeat;  background-size: cover; ">
+		<div class="slogan wow fadeInUp animated">
+			<div class="slogan  wow fadeInUp animated">
+				<h2><%= contenido.slogan5 %></h2>
+			<h4><%= contenido.frase6 %></h4>
+				<div class="page-scroll">
+					<%= link_to "#noticias", :class => "btn btn-circle centro" do %>
+						<i class="glyphicon glyphicon-menu-down bordeRadius animated "></i>
+					<% end %>
+				</div>
+			</div>
+		</div>
+    </section>
+    <section class="home-section" id="noticias">
+    	<br><br><br>
+		<div class="row ">
+			<!-- anteriores -->
+			<div class="col-xs-12 col-sm-2 col-md-2">     
+				 <div class="leftPost anteriores">
+		          <h6 style="font-weight: bold;">Noticias Anteriores</h6>
+		          	<% @categoria.each do |categoria| %>
+			          	<strong ><%= categoria.nombre %></strong><br>
+			          	<% @noticia.each do |noticia| %>
+			          		<% if noticia.categoria  == categoria.nombre  %>
+			          			<div class="post_antiguo">
+				                	<a><%=link_to noticia.titulo,  noticia_path(noticia) %></a>
+				              	</div>
+			          		<% end %>
+			          	<% end %><br>
+		          	<% end %>
+		        </div>
+		    </div>
+			<!-- entrada blog -->
+			<div class="col-xs-12 col-sm-10 col-md-10">     
+				<div class="rightPost" id="vista" >
+					<% @noticia.order('created_at DESC').each do |noticia| %>
+						<div class="wow bounceInUp fadeInLeft animated" data-wow-delay="0.2s">
+				            <div class="team boxed-grey   bg-gray ">
+								<div class="inner">
+									<div class="imgNoticia">
+										<strong class="subtitulo" id="<%=  noticia.titulo %>"><%= link_to noticia.titulo, noticia_path(noticia)  %> </strong>
+										<br>
+							    		<%= image_tag noticia.image.url, :class =>"img-responsive img-circle" %><br>
+							    	</div>
+							    	<div class="parrafo">
+										<%= raw noticia.descripcion %> 
+									</div>
+								<hr class="marginbot-20">
+							</div> 
+						</div>
+						<br>
+			   		<% end %>
+				</div>
+			</div>     
+		</div>
+	</section>
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+<script>
+ $(document).ready(function (){
+    $("#s4 a").css('color','#138bbe');
+  });
+</script>
+	
+
+

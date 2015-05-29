@@ -1,0 +1,17 @@
+<section  class="  bg-gray home-section text-center  ">
+   <div class="row">
+    <% @contenido.each do |contenido| %>
+      <div class="col-xs-12 col-sm-8 col-md-8">
+      <div class="wow bounceInUp" data-wow-delay="0.2s">
+        <div class="team boxed-grey">
+          <div class="inner">
+             <strong>En esta sesión unted puede agregar el contenido para la sesiones inicio, beneficios, únete y contacto. Solo debe crear el contenido una vez, despues de creado podra editarlo cuando lo considere necesario. </strong><br><br>
+            <a><%=  link_to 'Editar Contenido', edit_admin_contenido_path(contenido), :class => 'btn btn-info'%></a>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <% end %>
+  
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row">
+		<% @nombre.each do |nombre| %>
+			<div  class ="formulario" >
+			 	<div class="row">
+			 		<br>
+			      <div class="col-xs-12 col-sm-4 col-md-6">     
+			         <strong>Nombres del menú para las sesiones</strong><br><br>
+			      </div>
+			    </div>
+		      	<div class="row">
+		      		<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="form-group">
+							<strong>Sesión 1 </strong>
+							(Beneficios de estar en la red): &nbsp;
+							<%= nombre.sesion1 %>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<div class="form-group">
+							<strong>Sesión 2 </strong>
+							(Enfocado a talleres): &nbsp;
+							<%= nombre.sesion2 %>						
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+							<strong>Sesión 3 </strong>
+							(Enfocado a usuarios): &nbsp;
+							<%= nombre.sesion3 %>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+		      		<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+							<strong>Sesión 4 </strong>
+							(Noticias): &nbsp;
+							<%= nombre.sesion4 %>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+							<strong>Sesión 5 </strong>
+							(Contacto): &nbsp;
+							<%= nombre.sesion5 %>
+			     			 
+				 		</div> 	
+				 	</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3">
+						<div class="form-group">
+						<%=  link_to 'Editar menu', edit_admin_nombre_path(nombre), :class => 'btn btn-info'%>
+						</div> 	
+				 	</div>
+				</div>
+		 	</div> 
+ 		<% end %>
+	</div>
+</section>

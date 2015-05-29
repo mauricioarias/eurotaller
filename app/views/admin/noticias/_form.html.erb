@@ -1,0 +1,67 @@
+<div class="row formulario rowPadding bg-gray">
+  <%= form_for @noticia, :url => admin_noticias_path, :html => { :multipart => true } do |form| %>
+    <!-- Mensaje de error para tamano del titulo-->
+      <% if @noticia.errors.any? %>
+        <div id="error_explanation">
+          <a><%=pluralize(@noticia.errors.count, "Error")%> , Esta  noticia no puede ser guardada:</a> 
+          <ul>
+            <% @noticia.errors.full_messages.each do |msg| %>
+              <li><a><%= msg %></a></li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>
+      <br>
+  <div id="contenidoInicio" class ="formulario">
+     <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-6">     
+           <strong>Crear Noticia</strong><br><br>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <div class="form-group">
+          <%= form.label 'Titulo Noticia',  :class => "input-l",  :tabindex => "" %>
+         <%= form.text_field :titulo,  :class => "form-control input-l", :placeholder => "Titulo Noticia" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Categoría',  :class => "input-l",  :tabindex => "" %>
+          <%= form_tag admin_categorias_path, method: :get do %>
+            <div class="form-group">
+              <%= form.select :categoria, options_from_collection_for_select(Categoria.all, "nombre", "nombre", params[:nombre]), prompt: "Categoría Noticia", :class=> "form-control input-l" %>
+            </div>
+          <% end %> 
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <div class="form-group">
+          <%= form.label 'Imagen Principal',  :class => "input-l",  :tabindex => "" %><br>
+          <%= form.file_field :image %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 ">
+        <div class="form-group">
+          <%= form.label 'Descripción Noticia',  :class => "input-l",  :tabindex => "" %>
+         <%= form.cktext_area :descripcion,  :class => "form-control input-l altoFijo ", :placeholder => "Corta descripción Noticia" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 ">
+        <div class="form-group">
+          <%= form.label 'Contenido Noticia',  :class => "input-l",  :tabindex => "" %>
+         <%= form.cktext_area :contenido,  :class => "form-control input-l altoFijo ", :placeholder => "Contenido Noticia" %>
+        </div>
+      </div>
+    </div>
+     
+    <p>
+      <%= form.submit  :value =>'guardar',  :class => 'btn btn-info' %>
+    </p>
+  <% end %>
+</div>
+

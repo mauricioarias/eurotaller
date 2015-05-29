@@ -1,0 +1,26 @@
+<section  class=" bg-gray home-section text-center textoAdministrador ">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-md-6" style="  text-align: left;">      
+			<br>      
+      		<h6>Categorías para Noticias</h6><br>
+        </div>
+		<% @categoria.order('nombre').each do |categoria| %>
+			 <div  class ="formulario">
+		      	<div class="row">
+		      		<div class="col-xs-12 col-sm-8 col-md-8">
+						<div class="form-group">
+							<strong>Categoría:&nbsp;&nbsp;<%=  categoria.nombre %>
+							</strong>
+			     			 <p>
+						 		<%=  link_to 'Editar', edit_admin_categoria_path(categoria)%> | 
+						 		<%= link_to 'Eliminar', admin_categoria_path(categoria), method: :delete, :onclick => "return confirm('Estas seguro de eliminar esta categoría?')" %>
+				 			</p>
+				 			
+				 		</div> 	
+				 	</div>
+				</div>
+		 	</div> 
+ 		<% end %>
+	</div>
+
+</section>

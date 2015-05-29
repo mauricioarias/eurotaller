@@ -1,0 +1,60 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+	<section class="home-section text-center bg-gray wow bounceInUp" data-wow-delay="0.2s" style="padding-top:50px !important;   min-height: 500px;">
+	<div class="heading-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 ">
+					<h2><%=  @noticia.titulo %></h2>
+				</div>
+				<div class="col-lg-8 col-lg-offset-2 ">
+					<%= link_to 'Ver Todas las noticias', verNoticia_path %>
+				</div>
+			</div>
+			<div class="row">
+				<div id="vista">
+					<div class="wow bounceInUp" data-wow-delay="0.2s">
+			            <div class="team boxed-grey   bg-gray ">
+							<div class="inner">
+								<div class="col-xs-12 col-sm-4 col-md-4">
+									<div class="form-group ">
+										<div class="">
+								    		<%= image_tag @noticia.image.url, :class =>"img-responsive " %><br>
+								    		<div class ="row">
+												<div class="col-xs-12 col-sm-3 col-md-3" style="margin-right:25px">
+												    <div class="form-group">
+														 <a href="https://www.facebook.com/sharer/sharer.php?u={<%= request.original_url %>}" title="Share on Facebook" target="_blank" class="btn btn-facebook" ><i class="fa fa-facebook"></i> Compartir</a>
+												    </div>
+												</div>
+									    		<div class="col-xs-12 col-sm-3 col-md-3">
+												    <div class="form-group">
+
+												     	<a href="https://twitter.com/share" class="btn btn-twitter" data-url="<%= request.original_url %>" data-via="EUROTALLER" data-lang="es" data-related="EuroTaller" data-hashtags="EuroTaller" target="_blank">Twittear</a>
+														<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+												    </div>
+												</div>
+											</div>
+
+								    	</div>
+								    </div>
+								</div>
+								<div class="col-xs-12 col-sm-8 col-md-8">
+									<div class="form-group ">
+										<%= raw @noticia.contenido %> 
+									</div>
+								</div>
+							</div>
+							<hr class="marginbot-20">
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+<script>
+ $(document).ready(function (){
+    $("#s4 a").css('color','#138bbe');
+  });
+</script>

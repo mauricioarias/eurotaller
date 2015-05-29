@@ -1,0 +1,85 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyText
+  fondoInicio: 
+  slogan1: MyString
+  frase1: MyString
+  convenios: MyText
+  beneficios: MyText
+  respaldo: MyText
+  imgConvenios: 
+  imgBeneficios: 
+  imgRespalfo: 
+  fondoBeneficios: 
+  slogan2: MyString
+  frase2: MyString
+  formacion: MyText
+  marketing: MyText
+  informacion: MyText
+  imagen: 
+  frase3: MyString
+  imgFormacion: 
+  imgMarketing: 
+  imgInfomacion: 
+  imgImagen: 
+  fondoUnete: 
+  slogan3: MyString
+  frase4: MyString
+  fondoTalleres: 
+  slogan4: MyString
+  frase5: MyString
+  fondoNoticias: 
+  slogan5: MyString
+  frase6: MyString
+  frase7: MyString
+  correo: MyString
+  telefono: MyString
+  facebook: MyString
+  twitter: MyString
+  google: MyString
+  fondoContacto: 
+  fondoContacto: 
+  fondoContacto: 
+
+two:
+  descripcion: MyText
+  fondoInicio: 
+  slogan1: MyString
+  frase1: MyString
+  convenios: MyText
+  beneficios: MyText
+  respaldo: MyText
+  imgConvenios: 
+  imgBeneficios: 
+  imgRespalfo: 
+  fondoBeneficios: 
+  slogan2: MyString
+  frase2: MyString
+  formacion: MyText
+  marketing: MyText
+  informacion: MyText
+  imagen: 
+  frase3: MyString
+  imgFormacion: 
+  imgMarketing: 
+  imgInfomacion: 
+  imgImagen: 
+  fondoUnete: 
+  slogan3: MyString
+  frase4: MyString
+  fondoTalleres: 
+  slogan4: MyString
+  frase5: MyString
+  fondoNoticias: 
+  slogan5: MyString
+  frase6: MyString
+  frase7: MyString
+  correo: MyString
+  telefono: MyString
+  facebook: MyString
+  twitter: MyString
+  google: MyString
+  fondoContacto: 
+  fondoContacto: 
+  fondoContacto: 

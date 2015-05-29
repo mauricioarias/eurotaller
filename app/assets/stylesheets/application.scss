@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@charset 'UTF-8';
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$font-stack: 'Lato',sans-serif;
+$primary-color: #fff;
+
+body{
+  width:100%;
+  height: 100%;
+  font-family: $font-stack;
+  position: relative;
+  background-color: $primary-color;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+.btn-facebook {
+    background: #3b5998;
+    
+    border-radius: 0;
+    color: #fff;
+    font-size: 10px;
+    text-transform: capitalize !important;
+}
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff
+}
+.btn-facebook:active, .btn-facebook:hover {
+    background: #30477a;
+    color: #fff
+}
+.btn-twitter {
+    background: #00acee;
+    border-radius: 0;
+    color: #fff;
+    font-size: 10px;
+    text-transform: capitalize !important;
+}
+.btn-twitter:link, .btn-twitter:visited {
+    color: #fff
+}
+.btn-twitter:active, .btn-twitter:hover {
+    background: #0087bd;
+    color: #fff
+}

@@ -1,0 +1,20 @@
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+	<!-- intro -->
+    <section id="intro" class="unete" style="background: url(<%= contenido.fondoUnete.url %>); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+		<div class="slogan wow fadeInUp animated">
+			<h2><%= contenido.slogan2 %></h2>
+			<h4><%= contenido.frase2 %></h4>
+		</div>
+		
+		<%=  render :partial => "layouts/unete" %>
+    </section>
+ 	
+<% end %>
+<%=  render :partial => "layouts/footer" %>
+
+<script>
+ $(document).ready(function (){
+    $("#s2 a").css('color','#138bbe');
+  });
+</script>

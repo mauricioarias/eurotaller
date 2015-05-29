@@ -1,0 +1,169 @@
+
+<%=  render :partial => "layouts/menuContenido" %>
+<% @contenido.each do |contenido| %>
+	<section id="intro" class="caracteristicas style2 right dark fullscreen" style="background: url(<%= contenido.fondoBeneficios.url %>); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+		<div class="slogan  wow fadeInUp animated">
+			<h2><%= contenido.slogan1 %></h2>
+			<h4><%= contenido.frase1 %></h4>
+		</div>
+	</section>
+	<!-- intro beneficios -->
+	<section id="caracteristicas" class="home-section text-center bg-gray" style="min-height:300px;" >
+		<div class="heading-about">
+			<div class="container">
+				<div class="row">
+					<br>
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow fadeInDown animated" data-wow-delay="0.3s">
+							<div class="section-heading" style="text-aling:center;">
+								<a href="#div1" class='MO linkNosotros seleccionado'>Historia</a>&nbsp;&nbsp;
+								<a href="#div2" class='MO linkNosotros' style="border-left: 1px solid #999;border-right: 1px solid #999;">Beneficios</a>&nbsp;&nbsp;
+								<a href="#div3" class='MO linkNosotros'>Convenios</a>
+							</div>
+							<hr class="marginbot-20">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><br>
+		<div class="container">
+		    <div class="row">
+		        <!-- intro historia -->
+		        <div id="div1" class="oculto primero fadeInLeft animated" data-wow-delay="0.2s">
+					<div class="col-xs-12 col-sm-3 col-md-3" style="width:20% !important;">
+			            <div class="service-box ">
+							<div>
+								<%= image_tag contenido.imgRespalfo.url, :style=>"  max-width: 130px; !important" %>
+							</div>
+							<div >
+								<p><%= raw contenido.masRespaldo %></p>
+							</div>
+						</div>
+			    	</div>
+			    	<div class="col-xs-12 col-sm-8 col-md-8" style="border-left: 1px solid #999;">
+			    		<%= raw contenido.respaldo %>
+			    	</div>
+			    </div>
+		        <!-- intro beneficios -->
+		        <div id="div2" class="oculto fadeInLeft animated" data-wow-delay="0.2s">
+					<div class="col-xs-12 col-sm-3 col-md-3" style="width:20% !important;">
+			            <div class="service-box ">
+							<div>
+								<%= image_tag contenido.imgBeneficios.url, :style=>"  max-width: 130px; !important"%>
+							</div>
+							<div>
+								<%= raw contenido.masBeneficios %>
+							</div>
+			            </div>
+			        </div>
+			        <div class="col-xs-12 col-sm-8 col-md-8" style="border-left: 1px solid #999;">
+			    		<%= raw contenido.beneficios %>
+			    	</div>
+			    </div>
+		        <!-- intro convenios -->
+		        <div id="div3" class="oculto fadeInLeft animated" data-wow-delay="0.2s">
+		        	<div class="row">
+				        <div class="col-xs-12 col-sm-3 col-md-3" style="width:20% !important;">
+							<div class="service-box datos">
+								<div>
+									<%= image_tag contenido.imgConvenios.url, :style=>"  max-width: 130px; !important"  %><br>
+									<%= link_to  'Ver Convenios', ('#masConvenios'), :id=>'con' %> 
+								</div>
+							</div>
+				        </div>
+				        <div class="col-xs-12 col-sm-8 col-md-8" style="border-left: 1px solid #999;">
+				    		<%= raw contenido.convenios %>
+				    	</div>
+				    </div>
+					<!-- inicio listado de convenios |||||||||||||||||||||||||||||||||||||||||| -->
+					<br>
+					<div class="row" id="masConvenios" style="display:none;">
+						<div >
+							<% @convenio.order('created_at DESC').each do |convenio| %>
+								<div class="col-xs-12 col-sm-6 col-md-6" style="min-height:200px !important;">
+									<div class="fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
+							            <div class="col-xs-12 col-sm-3 col-md-3">
+							            	<%= image_tag convenio.logo.url, :class => "img-responsive  logoConvenio", style:"max-width:85px !important;" %>
+							            </div>
+							            <div class="col-xs-12 col-sm-8 col-md-8">
+								          	<div class="form-group" style="text-align:left;">
+								          		<strong>Nombre:<%= convenio.nombre %></strong> |
+								          		<a> Fecha de validez:<%= convenio.fecha %></a><br>
+								            	<p>Descripción: &nbsp;<%= convenio.descripcion %></p>
+								            	<!--  modal -->
+								            	<div class="bs-modal">
+													<button class=" btn btn-primary" data-toggle="modal" data-target="#<%= convenio.id %>" style="padding:4px !important; font-size:9px !important; font-family:'Open-Sans', sans-serif !important;">Detalles</button>
+												</div>
+								          	</div>
+							            </div>
+									</div>
+							    </div>
+						    <% end %><!-- fin recorrido convenios-->
+						</div>
+					</div>
+					<!-- fin listado de convenios |||||||||||||||||||||||||||||||||||||||||| -->
+			  </div>
+			</div>
+			<!-- div class="row">
+				campo sin uso
+				<%= raw contenido.nosotros %>
+			</div-->
+	    </div>
+	</section>
+	<% @convenio.each do |convenio| %>
+		<div id="<%= convenio.id %>" class="modal fade bs-modal-modal-lg" tabindex="-1" role="dialog" >
+	        <div class="modal-dialog modal-lg" style="margin-top:12% !important;">
+	            <div class="modal-content">
+	                <div class="modal-header" style="padding:20px !important;">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <%= image_tag convenio.logo.url, :class => "img-responsive  logoConvenio", :style =>"float:left; max-width:80px !important; margin:6px 10px 0 0; " %>
+			            <h4 class="modal-title" style="margin:12px 0 0 0; "><%= convenio.nombre %></h4>
+			            <br>
+	                </div>
+	                <div class="modal-body">
+	                    <p><%= raw convenio.detalles %></p>
+	                </div>
+	                <div class="modal-footer" style="padding:0 !important">
+	                    <p style="padding:0 15px !important">Convenios Eurotaller</p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    <% end %>
+<% end %>	
+<%=  render :partial => "layouts/footer" %>
+
+<script>
+ $(document).ready(function (){
+    $("#s1 a").css('color','#138bbe');
+
+    $('#con').on('click',function(){
+      $('#masConvenios').toggle('slow');
+   	});
+
+  });
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function(){ 
+    $(".oculto").hide(); 
+    $(".primero").show();
+               
+    $(".MO").click(function(){
+    	$(".primero").hide();
+          var nodo = $(this).attr("href");  
+ 		 
+          if ($(nodo).is(":visible")){
+               $(nodo).hide();
+               return false;
+          }else{
+        $(".oculto").hide();                             
+        $(nodo).fadeToggle( "slow" );
+        return false;
+          }
+    });
+    
+});
+
+</script>
+
+

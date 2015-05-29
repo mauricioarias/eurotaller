@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top " id="menuContenido">
+    <div class="container">
+        <div id="logoMenu">
+            <%= link_to root_path do %>
+                <%= image_tag ("logo.png"), :class => "navbar-brand", :id => "logotipo"%>
+            <% end %>
+        </div>
+        <% @nombre.each do |nombre| %>
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1" style="padding-top:10px !important;">
+                <ul class="nav navbar-nav navbar-right" id="opciones">
+                    <li id="s1">
+                        <%= link_to  (detalles_path), :class => "active" do %>
+                            <%=  nombre.sesion1 %>
+                        <% end %>
+                        
+                    </li>
+                    <li id="s2">
+
+                        <%= link_to (unete_path), :class => "active" do %>
+                            <%=  nombre.sesion2 %>
+                        <% end %>
+                    </li>
+                    <li id="s3">
+                        <%= link_to  (talleres_path), :class => "active" do %>
+                            <%=  nombre.sesion3 %>
+                        <% end %>
+                    </li> 
+                    <li id="s4">
+                        <%= link_to (verNoticia_path), :class => "active" do %>
+                            <%=  nombre.sesion4 %>
+                        <% end %>
+                    </li>
+                    <li id="s5">
+                        <%= link_to (contacto_path), :class => "active" do %>
+                            <%=  nombre.sesion5 %>
+                        <% end %>
+                    </li>    
+                </ul>
+            </div>
+        <% end %>
+    </div>
+</nav>
