@@ -1175,3 +1175,543 @@ ActionController::RoutingError (No route matches [GET] "/system/noticia/images/0
   Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
   Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
   Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-29 17:49:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AppController#index as HTML
+default_url_options is passed options: {}
+
+  [1m[35mNombre Load (0.3ms)[0m  SELECT "nombres".* FROM "nombres"
+  Rendered layouts/_menuContenido.erb (13.5ms)
+  [1m[36mContenido Load (0.8ms)[0m  [1mSELECT "contenidos".* FROM "contenidos"[0m
+  Rendered layouts/_beneficios.erb (4.3ms)
+  Rendered layouts/_porqueUnirse.erb (5.6ms)
+  [1m[35mNoticia Load (0.5ms)[0m  SELECT  "noticia".* FROM "noticia"   ORDER BY created_at DESC LIMIT 1
+  Rendered layouts/_ultimasNoticias.erb (8.9ms)
+  Rendered layouts/_footer.erb (1.4ms)
+  Rendered app/index.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 2738ms (Views: 2440.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+Processing by AppController#index as HTML
+default_url_options is passed options: {}
+
+  [1m[36mNombre Load (0.3ms)[0m  [1mSELECT "nombres".* FROM "nombres"[0m
+  Rendered layouts/_menuContenido.erb (3.3ms)
+  [1m[35mContenido Load (0.5ms)[0m  SELECT "contenidos".* FROM "contenidos"
+  Rendered layouts/_beneficios.erb (5.3ms)
+  Rendered layouts/_porqueUnirse.erb (5.3ms)
+  [1m[36mNoticia Load (0.3ms)[0m  [1mSELECT  "noticia".* FROM "noticia"   ORDER BY created_at DESC LIMIT 1[0m
+  Rendered layouts/_ultimasNoticias.erb (2.7ms)
+  Rendered layouts/_footer.erb (1.1ms)
+  Rendered app/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 210ms (Views: 208.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/categorias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/contenidos.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/miembros.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/convenios.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/nombres.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/admin/noticias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/animate.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/app.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:42 -0500
+
+
+Started GET "/assets/miembros.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/noticias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/categorias.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/contenidos.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/convenios.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/miembros.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/nombres.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/admin/noticias.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery.easing.min%202.10.08%20PM.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery.prettyPhoto.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/jquery.scrollTo.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/login.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/miembros.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/noticias.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/wow.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/system/contenidos/imgrespalfos/000/000/004/original/respaldo.png?1432235901" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imgrespalfos/000/000/004/original/respaldo.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.2ms)
+
+
+Started GET "/system/contenidos/imgbeneficios/000/000/004/original/beneficios.png?1432235900" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imgbeneficios/000/000/004/original/beneficios.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.1ms)
+
+
+Started GET "/system/contenidos/imgformacions/000/000/004/original/formacion.png?1431122145" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imgformacions/000/000/004/original/formacion.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.2ms)
+
+
+Started GET "/system/contenidos/imgimagens/000/000/004/original/imagen.png?1431122148" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imgimagens/000/000/004/original/imagen.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.4ms)
+
+
+Started GET "/system/imgconvenios/4/:locale/original-.png?1432235899" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/imgconvenios/4/:locale/original-.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.2ms)
+
+
+Started GET "/system/contenidos/imginfomacions/000/000/004/original/informacion.png?1431122147" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imginfomacions/000/000/004/original/informacion.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.2ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (75.1ms)
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+
+Started GET "/system/contenidos/fondoinicios/000/000/004/original/home1.jpg?1432235875" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/fondoinicios/000/000/004/original/home1.jpg"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.7ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.4ms)
+
+
+Started GET "/system/contenidos/imgmarketings/000/000/004/original/marketin.png?1431122146" for 127.0.0.1 at 2015-05-29 17:49:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/contenidos/imgmarketings/000/000/004/original/marketin.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.1ms)
+
+
+Started GET "/system/noticia/images/000/000/007/original/Spring_Magazine_2015.png?1431724585" for 127.0.0.1 at 2015-05-29 17:49:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/system/noticia/images/000/000/007/original/Spring_Magazine_2015.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/mauricio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.5ms)
+
+
+Started GET "/assets/admin/categorias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:55 -0500
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/admin/convenios.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/admin/nombres.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/admin/noticias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/admin/miembros.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/admin/contenidos.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/animate.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/app.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/miembros.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/noticias.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/prettyPhoto.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 17:49:56 -0500
