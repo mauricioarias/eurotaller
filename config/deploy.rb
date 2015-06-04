@@ -5,17 +5,17 @@ set :whenever_command, "bundle exec whenever"
 
 require "rvm/capistrano"
 require 'bundler/capistrano'
-require "whenever/capistrano"
+# require "whenever/capistrano"
 # config valid only for current version of Capistrano
 
 ssh_options[:forward_agent] = false
 default_run_options[:pty] = true # required for svn+ssh:// andf git:// sometimes
 
-lock '3.4.0'
+# lock '3.4.0'
 
 set :application, 'eurotaller'
 # set :repo_url, 'git@github.com:mauricioarias/eurotaller.git'
-set :repo_url, 'https://github.com/mauricioarias/eurotaller.git'
+set :repository, 'https://github.com/mauricioarias/eurotaller.git'
 # set :deploy_to, '/opt/www/eurotaller'
 set :deploy_to, '/home4/www/rails_apps/#{application}'
 set :user, 'deploy'
