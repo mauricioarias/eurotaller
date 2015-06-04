@@ -69,7 +69,7 @@ task :production do
   set :branch, "production"
   #server "dev-lamer01.vdc.crownpartners.com", :app, :web, :db, :primary => true
   set :rvm_type, :user
-    server "www.eurotaller.co", :app, :web, :db, :primary => true
+    server "212.83.147.135", :app, :web, :db, :primary => true
   set :rails_env, :production
   set :user, "eurotall"
   set :password,              'n36dW18Ubq'
