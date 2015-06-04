@@ -40,7 +40,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'capistrano'
+gem 'capistrano', "~> 2.15.5"
 gem 'rvm-capistrano'
 
 # Use debugger
