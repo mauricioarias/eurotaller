@@ -13,12 +13,16 @@ default_run_options[:pty] = true # required for svn+ssh:// andf git:// sometimes
 
 # lock '3.4.0'
 
+set :user,                  'eurotall'
+set :password,              'n36dW18Ubq'
+set :dbuser,                'eurotall_prod'
+set :dbpass,                'n36dW18Ubq'
+
 set :application, 'eurotaller'
 # set :repo_url, 'git@github.com:mauricioarias/eurotaller.git'
 set :repository, 'https://github.com/mauricioarias/eurotaller.git'
 # set :deploy_to, '/opt/www/eurotaller'
 set :deploy_to, '/home4/www/rails_apps/#{application}'
-set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 set :deploy_via,            :remote_cache
 set :scm, :git
@@ -28,7 +32,6 @@ set :keep_releases, "2"
 set :whenever_roles, [:app, :web, :db]
 set :production_database,      'eurotaller_production'
 set :production_dbhost,        'localhost'
-
 # set :user, "eurotall"
 # set :password,              'n36dW18Ubq'
 # set :dbuser,                'root'
